@@ -1,5 +1,5 @@
 //Doubly linked list algorithm
-<script>
+
 function dbList(){
 	this.head=null;
 }
