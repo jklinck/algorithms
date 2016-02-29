@@ -1,4 +1,4 @@
-//this is a dat converter that takes in a date in the form 12/31/2015 and converts it to 20151231
+//this is a date converter that takes in a date in the form 12/31/2015 and converts it to 20151231
 
 function formatDate(userDate){
 	var x=[];
