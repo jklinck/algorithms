@@ -1,3 +1,5 @@
+// singly linked list
+
 
 function linkedList(){
 	this.head=null;
