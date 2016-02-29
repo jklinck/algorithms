@@ -1,4 +1,4 @@
-//this function takes an array as an argument and find which three indeces add up to the largest number and returns the index of the first number in the triplet that has the highest value 
+//this function takes an array as an argument and find which three indices add up to the largest number and returns the index of the first number in the triplet that has the highest value 
 
 
 function triplet(array){
