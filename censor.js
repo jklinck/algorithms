@@ -1,11 +1,11 @@
-//Create a function that takes two parameters. The first a word to censor and the second a string of text that may contain the word to be censored. Return the string with the censor word replaced with the correct length of randomly selected symbols
+//Create a function that takes two parameters. The first a word to censor and the second a string of text that may contain the word to be censored. Return the string with the censored word replaced with the correct length of randomly selected symbols
 
 
 function censor(badWord,str){
 	var x = [];
 	var temp = "";
 	for(var i=0;i<str.length;i++){
-	  if(str[i]!==" "){
+	  if(str[i]!==" " && str[i]!=="."){
 	    temp+=str[i];
 	  }
 	  if(str[i]===" "){
@@ -16,6 +16,7 @@ function censor(badWord,str){
 	if(temp!==""){
 	  x.push(temp);
 	}
+	// at this point each word in the string is now an index of x
 	for(var j=0;j<x.length;j++){
   		if(x[j]===badWord){
     	var censored="";
@@ -26,7 +27,7 @@ function censor(badWord,str){
     			replace="!";
     		}
     		else if(rand<0.25){
-    			replace="*";
+    			replace="&";
     		}
     		else if(rand<0.5){
     			replace="#";
@@ -49,6 +50,9 @@ function censor(badWord,str){
 	  	y+=" ";
 	  }
 	}
+	if(str[str.length-1]==="."){
+		y+=".";
+	  }
 	return y;
 }
   
