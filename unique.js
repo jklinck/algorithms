@@ -1,4 +1,4 @@
-// Algorithm that takes in a string and returns a string that doesn't not contain any repeating letters, for example it will take in 'aabb' and return 'ab'
+// Algorithm that takes in a string and returns a new string that only contains unique characters (ex: "aaabbcc" to "abc")
 
 function unique(str){
     var newStr="";
