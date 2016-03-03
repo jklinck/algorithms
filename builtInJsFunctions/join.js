@@ -1,5 +1,5 @@
 //This is a longhand version of the .join() built in JS method
-<script>
+
 function join2(x,y){
   var temp="";
   for(var i=0;i<x.length;i++){
