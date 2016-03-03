@@ -14,7 +14,8 @@ function strReverse(str){
 
 
 
-// replace an index of a string: it's arguments are a string, the index that you want to update and a value of what you want that value of that index to be
+// replace an index of a string: it's arguments are a string, the index that you want 
+//to update and a value of what you want that value of that index to be
 function replStrIndex(str,index,val){
     var newStr="";
     for(var i=0;i<str.length;i++){
