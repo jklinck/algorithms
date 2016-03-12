@@ -1,4 +1,4 @@
-// Javascript library for mutating strings 
+// Functions for reversing a string and replacing an index of a string
 
 
 // reverse a string
