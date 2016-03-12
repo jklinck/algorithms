@@ -1,4 +1,5 @@
-// Functions for reversing a string and replacing an index of a string
+// Functions for reversing a string, replacing an index of a string, pushing 
+// an element onto an array and removing the first element of an array
 
 
 // reverse a string

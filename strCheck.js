@@ -9,7 +9,6 @@ function mutation(arr) {
       newArr.push(temp);
   }
   for(var j=0;j<newArr[1].length;j++){
-      //if(!(contains(newArr[0],newArr[1][j]))){
       if((newArr[0]).indexOf(newArr[1][j])<0){
           return false;
       }
