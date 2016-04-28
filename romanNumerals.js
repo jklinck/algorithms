@@ -142,7 +142,7 @@ function fourDigits(num){
 }
 
 console.log(convertToRoman(1000));
-// there is an issue where node.js isn't returning anything for zero yet browswer javascript is returning "undefined"
+// there is an issue where node.js isn't returning anything for zero yet browswer javascript is returning "undefined", I fixed this issue with using == instead of === for checks against zero, being that once the number is split into and array with the split function in the main function it is actally a string and not a number, I found you can use the == if you do the comparison against zero as a string '0' rather than zero as a number
 
 
 
