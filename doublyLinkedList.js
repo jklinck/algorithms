@@ -4,10 +4,6 @@ function linkedList(){
 	this.head=null;
 }
 
-var check=function(){
-	console.log(this.head.data);
-};
-
 linkedList.prototype.isEmpty=function(){
 	return this.head===null;
 };
