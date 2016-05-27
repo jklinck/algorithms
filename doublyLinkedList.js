@@ -95,10 +95,14 @@ linkedList.prototype.remove=function(val){
 			else{
 				current=current.next;
 				while(current){
-					if(current.data===val){
-						var previous=current.prev;
+					var previous;
+					if(current.data===val && current.next!==null){
+						previous=current.prev;
 						current.prev.next=current.next;
 						current.next.prev=previous;
+					}
+					else if(current.data===val && current.next===null){
+						current.prev.next=null;
 					}
 					current=current.next;
 				}
@@ -132,10 +136,9 @@ list.append(7);
 list.append(8);
 list.prepend(3);
 list.print();
-list.remove(7);
+list.remove(8);
 list.print();
 
-// everything is working except the remove function when trying to remove the last node
 
 
 
