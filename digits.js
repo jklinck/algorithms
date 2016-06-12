@@ -1,4 +1,5 @@
-//This takes an integer and adds each number in the integer and stops when it is only one digit long
+//This takes an integer and adds each consecutivenumber in the integer 
+//and stops when it is only one digit long
 
 function digits(num){
     num=""+num;

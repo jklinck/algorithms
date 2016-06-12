@@ -1,10 +1,12 @@
 
 // take two arrays, make the indices of the first array to be the keys in an object and the second array to be the the values of the previously inserted keys
 
-var x = ["name","age"];
-var y = ["John",34];
-var z = {};
-for(var i=0;i<x.length;i++){
-   z[x[i]]=y[i];
+function arrToObj(arr1,arr2){
+	var obj={};
+	for(var i=0;i<arr1.length;i++){
+		obj[arr1[i]]=arr2[i];
+	}
+	return obj;
 }
-console.log(z);
+
+console.log(arrToObj(["name","age"],["John",34]));

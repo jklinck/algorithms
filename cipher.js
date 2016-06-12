@@ -1,9 +1,7 @@
 // Cipher algorithm that takes a string a returns the letter that is 13 spots behind 
-// it in the alphabet
+// it in the alphabet 
 
-// THIS MUST BE RUN IN THE BROWSER BECAUSE NODE DOES NOT CONTAIN AN API FOR .includes() 
-
-function rot13(str) {
+function cipher13(str) {
     var newStr="";
   var alpha=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
   for(var i=0;i<str.length;i++){
@@ -22,5 +20,5 @@ function rot13(str) {
   return newStr;
 }
 
-console.log(rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."));
+console.log(cipher13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."));
 // returns "The quick brown dog jumped over the lazy fox."

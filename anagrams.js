@@ -9,6 +9,8 @@ function anagrams(str){
 	return arr;
 }
 
+// THIS IS INCOMPLETE!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 var x="car";
 console.log(anagrams(x));
