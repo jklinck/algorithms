@@ -14,7 +14,6 @@ def mixed(x,y):
 				tempArr.append("odd")
 		arr.append(tempArr)
 		tempArr=[]
-	return arr
 	for k in arr:
 		if(k[0]=="odd" and ("even" in k)):
 			mix+=1
