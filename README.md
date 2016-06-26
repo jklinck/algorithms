@@ -1,1 +1,1 @@
-Algorithms in javascript. 
+Algorithms in javascript (mostly) and python. 

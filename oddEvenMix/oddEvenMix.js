@@ -46,8 +46,13 @@ function mixed(x,y){
 
 console.log(mixed(19,23));  // should be    mix:2, even:2 ,odd:1
 
-//  I'm pretty sure this algorithm is correct, I just want to do some more testing 
-// to make sure
+
+console.log(mixed(222222,222224));  // should be mix:1, even:2, odd:0
+
+//console.log(mixed(1,7500000)); // if you go higher than 7,500,000 node will crash
+
+
+
 
 
 
