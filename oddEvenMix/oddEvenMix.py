@@ -4,26 +4,23 @@ def mixed(x,y):
 	even=0
 	arr=[]
 	tempArr=[]
-	length=0
-	strr=""
-	for z in range(x,y+1):
-		length=len(str(z))
-		strr=str(z)
-		for i in strr:
-			if(int(i)%2==0):
+	for i in range(x,y+1):
+		numToStr=str(i)
+		length=len(numToStr)
+		for j in numToStr:
+			if(int(j)%2==0):
 				tempArr.append("even")
 			else:
 				tempArr.append("odd")
 		arr.append(tempArr)
 		tempArr=[]
-		strr=""
-
-	for n in arr:
-		if(n[0]=="odd" and ("even" in n)):
+	return arr
+	for k in arr:
+		if(k[0]=="odd" and ("even" in k)):
 			mix+=1
-		elif((n[0]=="even" and ("odd" in n))):
+		elif((k[0]=="even" and ("odd" in k))):
 			mix+=1
-		elif(n[0]=="even"):
+		elif(k[0]=="even"):
 			even+=1
 		else:
 			odd+=1
