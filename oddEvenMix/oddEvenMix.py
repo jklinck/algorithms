@@ -6,7 +6,6 @@ def mixed(x,y):
 	tempArr=[]
 	for i in range(x,y+1):
 		numToStr=str(i)
-		length=len(numToStr)
 		for j in numToStr:
 			if(int(j)%2==0):
 				tempArr.append("even")
