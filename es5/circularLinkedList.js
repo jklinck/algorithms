@@ -1,5 +1,7 @@
 /*
-Circular doubly linked list in javascript. In a ciruclar linked list the last node in the list points to this.head as it's next. In the case of a list with only one node, it both points back to itself from it's previous and points forward to itself with it's next.
+Circular doubly linked list in javascript. In a ciruclar linked list the last node in the list points to this.head 
+as its next. In the case of a list with only one node, this.head both points back to itself from its previous and points 
+forward to itself with its next.
 */
 
 "use strict";
