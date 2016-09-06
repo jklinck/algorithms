@@ -4,22 +4,26 @@ Circular doubly linked list in javascript. In a ciruclar linked list the last no
 
 "use strict";
 
-function Ll(){
+function Circ(){
 	this.head=null;
 }
 
-Ll.prototype.isEmpty=function(){
+Circ.prototype.isEmpty=function(){
 	return this.head===null;
 };
 
-Ll.prototype.size=function(){
+Circ.prototype.size=function(){
 	var size=0;
 	if(this.isEmpty()){
 		return size;
 	}
 	else{
+		size=1;
 		var current=this.head;
-		while(current){
+		if(current.next==this.head){
+			return size;
+		}
+		while(current.next!==this.head){
 			size++;
 			current=current.next;
 		}
@@ -27,35 +31,50 @@ Ll.prototype.size=function(){
 	}
 };
 
-Ll.prototype.contains=function(val){
+Circ.prototype.contains=function(val){
 	if(this.isEmpty()){
 		return false;
 	}
 	else{
 		var current=this.head;
-		while(current){
+		if(current.data==val){
+			return true;
+		}
+		while(current.next!==this.head){
 			if(current.data==val){
 				return true;
 			}
 			current=current.next;
 		}
+		if(current.next===this.head && current.data==val){
+			return true;
+		}
 		return false;
 	}
 };
 
-Ll.prototype.prepend=function(val){
+Circ.prototype.prepend=function(val){
 	var newNode={
-		prev:null,
+		prev:this.head,
 		data:val,
-		next:null
+		next:this.head
 	};
+	if(this.isEmpty()){
+		this.head=newNode;
+	}
 	var current=this.head;
-	this.head=newNode;
-	this.head.next=current;
-	current.prev=newNode;
+	while(true){
+		if(current.next==this.head){
+			current.next=newNode;
+			this.head=newNode;
+			this.head.next.prev=newNode;
+			break;
+		}
+		current=current.next;
+	}
 };
 
-Ll.prototype.append=function(val){
+Circ.prototype.append=function(val){
 	var newNode={
 		prev:null,
 		data:val,
@@ -69,7 +88,7 @@ Ll.prototype.append=function(val){
 	else{
 		var current=this.head;
 		var previous;
-		while(current.next && current.next!==this.head){
+		while(current.next!==this.head){
 			previous=current;
 			current=current.next;
 		}
@@ -79,44 +98,59 @@ Ll.prototype.append=function(val){
 	}
 };
 
-Ll.prototype.remove=function(){
+Circ.prototype.remove=function(){
 	
 };
 
-Ll.prototype.print=function(){
+Circ.prototype.print=function(){
 	var output=[];
 	if(this.isEmpty()){
 		console.log(output);
 	}
 	else{
+		output.push(this.head.data);
 		var current=this.head;
-			if(current.next===this.head){
-				output.push(current.data);
-				console.log(output);
-				return;
-			}
-			while(current.next!==this.head){
-				output.push(current.data);
-				current=current.next;
-			}
-			//console.log(output);
+		while(this.size()>1 && current.next!==this.head){
+			current=current.next;
+			output.push(current.data);
+		}
+		console.log(output);
 	}
 };
 
 
 
 
-var list=new Ll();
-list.isEmpty();
+var list=new Circ();
 list.append(5);
 list.append(6);
-// list.append(7);
-// list.append(8);
-// list.append(9);
-// list.prepend(4);
+list.append(7);
+list.append(8);
+list.prepend(4);
+list.append(9);
+list.prepend(3);
+
 list.print();
 
-//console.log(list.head.next.next.data);
+
+
+
+/*
+FUNCTIONS THAT ARE WORKING PROPERLY
+
+isEmpty
+size
+contains
+append 
+print
+
+
+NOT WORKING YET
+remove
+
+*/
+
+
 
 
 
