@@ -119,21 +119,17 @@ Circ.prototype.remove=function(val){
 		if(this.contains(val)){
 			if(this.head.data==val){
 				this.head=next;
+				this.head.prev=previous;
 				current.prev.next=this.head;
 			}
 			else{
-				while(true){
-					if(current.data!=val){
-						current=current.next;
-					}
-					else{
-						previous=current.prev;
-						next=current.next;
-						current.prev.next=current.next;
-						current.next.prev=current.prev;
-						break;
-					}
+				while(current.data!=val){
+					current=current.next;
 				}
+				previous=current.prev;
+				next=current.next;
+				current.prev.next=current.next;
+				current.next.prev=current.prev;
 			}
 		}
 	}
@@ -171,6 +167,10 @@ list.prepend(2);
 
 
 list.print();
+list.remove(2);
+list.print();
+
+
 
 
 
