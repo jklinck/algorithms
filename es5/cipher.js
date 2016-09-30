@@ -22,3 +22,38 @@ function cipher13(str) {
 
 console.log(cipher13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK."));
 // returns "The quick brown dog jumped over the lazy fox."
+
+/*
+Here is another idea of how to perform this.
+
+var x = 13;
+
+var phrase = 's';
+
+var temp;
+var temp2;
+var temp3 = '';
+
+var output = '';
+
+for(var i=0;i < phrase.length;i++){
+  if(phrase[i] == ' '){
+    output += ' ';
+  }
+  else if(phrase[i] != ' '){
+    temp = phrase[i];
+    temp2 = temp.charCodeAt(0) + x;
+    temp3 = String.fromCharCode(temp2);
+    if(temp2 < 123){
+      output += temp3;
+    }
+    else{
+      temp2 = temp2 - 26;
+      temp3 = String.fromCharCode(temp2);
+      output += temp3;
+    }
+  }
+}
+
+console.log(output);
+*/

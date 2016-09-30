@@ -1,5 +1,7 @@
 /* Binary search tree algorithm */
 
+var other=[];
+
 function Bst(){
 	this.head=null;
 	this.output=[];
@@ -57,7 +59,25 @@ Bst.prototype.append=function(val){
 };
 
 Bst.prototype.remove=function(val){
-	
+	var found = false;
+	var current = this.head;
+	var parent = null;
+	while(!found && current){
+		if(val<current.data){
+			parent = current;
+			current = current.left;
+		}
+		else if(val>current.data){
+			parent = current;
+			current = current.right;
+		}
+		else{
+			found = true;
+		}
+	}
+	if(found){
+
+	}
 };
 
 Bst.prototype.print=function(){
@@ -66,22 +86,36 @@ Bst.prototype.print=function(){
 	}));
 };
 
+Bst.prototype.inOrder=function(node){
+	if(node){
+		this.inOrder(node.left);
+		other.push(node.data);
+		this.inOrder(node.right);
+	}
+};
+
 
 var tree = new Bst();
-tree.append(50);
-tree.append(30);
-tree.append(20);
-tree.append(70);
-tree.append(90);
-tree.append(120);
-
-tree.print();
+tree.append(50).append(30).append(20).append(70).append(90).append(120).print();
 
 
 
+// tree.inOrder(tree.head);
+// tree.print();
+// console.log(other);
+
+// tree.print();
+//console.log(tree.remove(10));
+// tree.print();
 
 
-//console.log(tree.head);
+
+
+
+
+
+
+
 
 
 
