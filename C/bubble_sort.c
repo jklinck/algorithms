@@ -20,7 +20,8 @@ int main(void)
 				arr[i] = temp2;
 				arr[i+1] = temp;
 			}
-			else{
+			else
+			{
 				check++;
 			}
 		}
