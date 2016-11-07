@@ -1,25 +1,31 @@
-function bubbleSort(arr){
+function bubble(arr){
+	var originalArr = arr;
+	var counter = 0;
 	var temp;
-	var i;
-	var j = arr.length;
-	while(j>0){
-		for(i=0;i<arr.length-1;i++){
-				if(arr[i]>arr[i+1]){
-					temp = arr[i];
-					arr[i] = arr[i+1];
-					arr[i+1] = temp;
-				}
+	var n = arr.length - 1;
+	while(n > 0){
+		for(var i = 0;i < n;i++){
+			temp = arr[i];
+			temp2 = arr[i + 1];
+			if(arr[i] > arr[i+1]){
+				arr[i] = arr[i + 1];
+				arr[i + 1] = temp;
+			}
+			counter++;
 		}
-		j--;
+		n--;
 	}
-	return arr;
+	var answer = ["n: "+ arr.length,"n^2: " + (arr.length)*(arr.length),"Big O: (n^2)/2","actual Big O: " + counter,"Sorted array: "+arr];
+	return answer.join("\n");
 }
 
+var array = [6,5,4,3,2,1];
 
-var array = [ 54,35,43,79,7,87,32,89,87,82,15,98,31,72,70];
 
-console.log(array);
-console.log(bubbleSort(array));
+console.log("Original array:", array);
+console.log(bubble(array));
+
+
 
 
 
