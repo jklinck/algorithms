@@ -1,6 +1,5 @@
 function bubble(arr){
-	var originalArr = arr;
-	var counter = 0;
+	var counter = 0; 
 	var temp;
 	var n = arr.length - 1;
 	while(n > 0){
@@ -11,9 +10,9 @@ function bubble(arr){
 				arr[i] = arr[i + 1];
 				arr[i + 1] = temp;
 			}
-			counter++;
+			counter++; // keeps track of iterations through the for loop to see Big O run time
 		}
-		n--;
+		n--; // by decrementing "n" we are not looping through the already sorted portions at the end of the array
 	}
 	var answer = ["n: "+ arr.length,"n^2: " + (arr.length)*(arr.length),"Big O: (n^2)/2","actual Big O: " + counter,"Sorted array: "+arr];
 	return answer.join("\n");
